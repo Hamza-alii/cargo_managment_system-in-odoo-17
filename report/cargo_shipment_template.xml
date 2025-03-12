@@ -1,0 +1,11 @@
+<odoo>
+    <template id="cargo_shipment_template">
+        <div class="page">
+            <h2>Shipment Template</h2>
+            <p>Shipment ID: <span t-field="shipment.name"/></p>
+            <p>Origin: <span t-field="shipment.origin_location"/></p>
+            <p>Destination: <span t-field="shipment.destination_location"/></p>
+            <p>Status: <span t-field="shipment.state"/></p>
+        </div>
+    </template>
+</odoo>

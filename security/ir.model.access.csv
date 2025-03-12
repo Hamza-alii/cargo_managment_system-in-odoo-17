@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cargo_shipment_manager,cargo.model_cargo_shipment,model_cargo_shipment,base.group_user,1,1,1,1
+access_cargo_vehicle_manager,cargo.model_cargo_vehicle,model_cargo_vehicle,base.group_user,1,1,1,1
+access_cargo_employee_manager,cargo.model_cargo_employee,model_cargo_employee,base.group_user,1,1,1,1

@@ -1,0 +1,36 @@
+<odoo>
+    <template id="report_cargo_shipment">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <h2>Cargo Shipment Report</h2>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Shipment ID</th>
+                            <th>Origin</th>
+                            <th>Destination</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="docs" t-as="shipment">
+                            <td><span t-field="shipment.name"/></td>
+                            <td><span t-field="shipment.origin_location"/></td>
+                            <td><span t-field="shipment.destination_location"/></td>
+                            <td><span t-field="shipment.status"/></td> <!-- Make sure 'status' exists in the model -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <report 
+        id="action_report_cargo_shipment" 
+        model="cargo.shipment" 
+        string="Cargo Shipment Report" 
+        report_type="qweb-pdf" 
+        name="cargo_management.report_cargo_shipment" 
+        file="cargo_management.report_cargo_shipment" 
+        attachment_use="False"/>
+</odoo>

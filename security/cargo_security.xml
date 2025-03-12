@@ -1,0 +1,16 @@
+<odoo>
+    <record id="cargo_manager_group" model="res.groups">
+        <field name="name">Cargo Manager</field>
+        <field name="category_id" ref="base.module_category_operations"/>
+    </record>
+
+    <record id="cargo_employee_group" model="res.groups">
+        <field name="name">Cargo Employee</field>
+        <field name="category_id" ref="base.module_category_operations"/>
+    </record>
+
+    <record id="cargo_user_group" model="res.groups">
+        <field name="name">Cargo User</field>
+        <field name="category_id" ref="base.module_category_operations"/>
+    </record>
+</odoo>
