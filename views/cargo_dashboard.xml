@@ -1,24 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Dashboard Kanban View -->
+    <!-- Kanban View -->
     <record id="view_cargo_dashboard_kanban" model="ir.ui.view">
         <field name="name">cargo.dashboard.kanban</field>
         <field name="model">cargo.dashboard</field>
         <field name="arch" type="xml">
             <kanban>
+                <field name="total_shipments"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_global_click">
+                        <div class="oe_kanban_global_click o_kanban_card">
                             <div class="o_kanban_record">
                                 <strong>Total Shipments:</strong>
                                 <span t-esc="record.total_shipments.raw_value"/>
-                            </div>
-                            <div class="o_kanban_record">
-                                <strong>Pending Shipments:</strong>
-                                <span t-esc="record.pending_shipments.raw_value"/>
-                            </div>
-                            <div class="o_kanban_record">
-                                <strong>Delivered Shipments:</strong>
-                                <span t-esc="record.delivered_shipments.raw_value"/>
                             </div>
                         </div>
                     </t>
@@ -27,7 +21,7 @@
         </field>
     </record>
 
-    <!-- Dashboard Form View -->
+    <!-- Form View -->
     <record id="view_cargo_dashboard_form" model="ir.ui.view">
         <field name="name">cargo.dashboard.form</field>
         <field name="model">cargo.dashboard</field>
@@ -35,40 +29,27 @@
             <form string="Cargo Dashboard">
                 <sheet>
                     <group>
+                        <field name="status" readonly="1"/>
                         <field name="total_shipments" readonly="1"/>
-                        <field name="pending_shipments" readonly="1"/>
-                        <field name="delivered_shipments" readonly="1"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <!-- Dashboard Graph View (Bar Chart) -->
+    <!-- Graph Chart -->
     <record id="view_cargo_dashboard_graph" model="ir.ui.view">
         <field name="name">cargo.dashboard.graph</field>
-        <field name="model">cargo.shipment</field>
+        <field name="model">cargo.dashboard</field>
         <field name="arch" type="xml">
             <graph string="Shipment Status Overview" type="bar">
                 <field name="status" type="row"/>
-                <field name="id" type="measure"/>
+                <field name="total_shipments" type="measure"/>
             </graph>
         </field>
     </record>
 
-    <!-- Dashboard Graph View (Pie Chart) -->
-    <record id="view_cargo_dashboard_pie" model="ir.ui.view">
-        <field name="name">cargo.dashboard.pie</field>
-        <field name="model">cargo.shipment</field>
-        <field name="arch" type="xml">
-            <graph string="Shipment Distribution" type="pie">
-                <field name="status" type="row"/>
-                <field name="id" type="measure"/>
-            </graph>
-        </field>
-    </record>
-
-    <!-- Dashboard Action -->
+    <!-- Action Window -->
     <record id="action_cargo_dashboard" model="ir.actions.act_window">
         <field name="name">Cargo Dashboard</field>
         <field name="res_model">cargo.dashboard</field>

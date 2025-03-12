@@ -1,16 +1,9 @@
 <odoo>
     <menuitem id="cargo_management_main_menu" name="Cargo Management"/>
 
-    <menuitem id="cargo_dashboard_menu" name="Dashboard" parent="cargo_management_main_menu" action="action_cargo_dashboard"/>
     <menuitem id="cargo_shipment_menu" name="Shipments" parent="cargo_management_main_menu"/>
     <menuitem id="cargo_vehicle_menu" name="Vehicles" parent="cargo_management_main_menu"/>
     <menuitem id="cargo_employee_menu" name="Employees" parent="cargo_management_main_menu"/>
-
-    <record id="action_cargo_dashboard" model="ir.actions.act_window">
-        <field name="name">Cargo Dashboard</field>
-        <field name="res_model">cargo.dashboard</field>
-        <field name="view_mode">kanban,form</field>
-    </record>
 
     <record id="action_cargo_shipment" model="ir.actions.act_window">
         <field name="name">Shipments</field>
